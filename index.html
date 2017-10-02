@@ -7,11 +7,7 @@
     <title>Document</title>
     <script>
         function magic_multiply(x, y){
-            if(x === 5 && y === 2){
-                x = x*y;
-                return x;
-            }
-            else if(x=== 0 && y===0){
+            if(x=== 0 && y===0){
                 return "All inputs 0"
             }
             else if(x.constructor === Array){
@@ -20,12 +16,15 @@
                 }
                 return x;
             }
-            else if(!Number.isInteger(y)){
+            else if(y.constructor === String){
                 return "Error: Can not multiply by string"
             }
-            else if(!Number.isInteger(x)){
+            else if(x.constructor === String){
                 
                 return Array(y+1).join(x)
+            }
+            else {
+                return x * y;
             }
         }
 
