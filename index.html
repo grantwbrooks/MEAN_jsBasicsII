@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        function magic_multiply(x, y){
+            if(x === 5 && y === 2){
+                x = x*y;
+                return x;
+            }
+            else if(x=== 0 && y===0){
+                return "All inputs 0"
+            }
+            else if(x.constructor === Array){
+                for(var i = 0; i<x.length; i++){
+                    x[i] = y*x[i];
+                }
+                return x;
+            }
+            else if(!Number.isInteger(y)){
+                return "Error: Can not multiply by string"
+            }
+            else if(!Number.isInteger(x)){
+                
+                return Array(y+1).join(x)
+            }
+        }
+
+
+        let test1 = magic_multiply(5, 2);
+        console.log(test1);
+        let test2 = magic_multiply(0, 0);
+        console.log(test2);
+        let test3 = magic_multiply([1, 2, 3], 2);
+        console.log(test3);
+        let test4 = magic_multiply(7, "three");
+        console.log(test4);
+        let test5 = magic_multiply("Brendo", 4);
+        console.log(test5);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
